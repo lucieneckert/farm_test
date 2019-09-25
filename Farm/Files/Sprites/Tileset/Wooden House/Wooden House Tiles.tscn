@@ -1,0 +1,213 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Sprites/Tileset/Wooden House/top left corner.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Tileset/Wooden House/bottom left corner.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tileset/Wooden House/bottom edge.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Tileset/Wooden House/left edge.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Tileset/Wooden House/center wall blank.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Tileset/Wooden House/right edge.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Tileset/Wooden House/right edge window alt.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Tileset/Wooden House/top edge.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Tileset/Wooden House/left edge window alt.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Tileset/Wooden House/center window.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Tileset/Wooden House/door top.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Tileset/Wooden House/door bottom.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Tileset/Wooden House/top right corner.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Tileset/Wooden House/roof left.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Tileset/Wooden House/roof middle.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Tileset/Wooden House/roof right.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Wooden House Tiles" type="Node2D"]
+
+[node name="Top Left Edge" type="Sprite" parent="."]
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Top Left Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Left Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Bottom Left Edge" type="Sprite" parent="."]
+position = Vector2( 16, 112 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Left Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Left Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Bottom Edge" type="Sprite" parent="."]
+position = Vector2( 64, 112 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Bottom Right Edge" type="Sprite" parent="."]
+position = Vector2( 112, 112 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Right Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Right Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Left Edge" type="Sprite" parent="."]
+position = Vector2( 16, 64 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Blank Center" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blank Center"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blank Center/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Right Edge" type="Sprite" parent="."]
+position = Vector2( 112, 64 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Right Edge Window" type="Sprite" parent="."]
+position = Vector2( 256, 16 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right Edge Window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Edge Window/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Top Edge" type="Sprite" parent="."]
+position = Vector2( 64, 16 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Top Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Left Edge Window" type="Sprite" parent="."]
+position = Vector2( 160, 16 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left Edge Window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Edge Window/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Center Window" type="Sprite" parent="."]
+position = Vector2( 208, 16 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Center Window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Center Window/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Door Top" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door Top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Top/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Door Bottom" type="Sprite" parent="."]
+position = Vector2( 256, 112 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door Bottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Bottom/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Top Right Edge" type="Sprite" parent="."]
+position = Vector2( 112, 16 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Top Right Edge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Right Edge/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Roof Left" type="Sprite" parent="."]
+position = Vector2( 304, 16 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Roof Center" type="Sprite" parent="."]
+position = Vector2( 352, 16 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Roof Right" type="Sprite" parent="."]
+position = Vector2( 400, 16 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}

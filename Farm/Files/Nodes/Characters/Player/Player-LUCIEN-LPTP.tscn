@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Nodes/Characters/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Characters/shadow.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Characters/Townspeople/econome.png" type="Texture" id=3]
+[ext_resource path="res://Nodes/Characters/Player/Sprite.gd" type="Script" id=4]
+[ext_resource path="res://Animations/walk_down.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/walk_left.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/walk_right.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/walk_up.tres" type="Animation" id=8]
+[ext_resource path="res://Nodes/Characters/Player/Action Area.gd" type="Script" id=9]
+[ext_resource path="res://Nodes/Characters/Player/Action Note.gd" type="Script" id=10]
+[ext_resource path="res://Misc/Fonts/dpcomic.ttf" type="DynamicFontData" id=11]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.02512, 5.06807 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.11157
+height = 5.0
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 11 )
+
+[node name="Player" type="Node2D"]
+position = Vector2( 60.5841, 41.9429 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player Body" type="KinematicBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Body"]
+position = Vector2( 0.110188, 17.1133 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Player Body"]
+modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 0.37738, 19.6224 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player Body"]
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 4
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player Body/Sprite"]
+anims/walk_down = ExtResource( 5 )
+anims/walk_left = ExtResource( 6 )
+anims/walk_right = ExtResource( 7 )
+anims/walk_up = ExtResource( 8 )
+
+[node name=" ActionArea" type="Area2D" parent="Player Body"]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Body/ ActionArea"]
+position = Vector2( 0, 5 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player Body"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Action Note" type="Node2D" parent="Player Body"]
+position = Vector2( 11.3722, -24.2813 )
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 10 )
+
+[node name="Panel" type="Panel" parent="Player Body/Action Note"]
+margin_right = 60.0
+margin_bottom = 18.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player Body/Action Note/Panel"]
+margin_right = 60.0
+margin_bottom = 18.0
+custom_fonts/normal_font = SubResource( 3 )
+scroll_active = false
+[connection signal="area_shape_entered" from="Player Body/ ActionArea" to="." method="_on__ActionArea_area_shape_entered"]
+[connection signal="area_shape_exited" from="Player Body/ ActionArea" to="." method="_on__ActionArea_area_shape_exited"]
